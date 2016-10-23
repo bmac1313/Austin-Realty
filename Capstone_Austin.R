@@ -7,6 +7,9 @@ library(data.table)
 setwd("Desktop/Austin_Realty")
 getwd()
 
+
+#ZILLOW DATA
+
 #DATA IMPORT AND CLEANING
 
 #import Zillow time series rent data for all homes plus multi-family
@@ -39,5 +42,49 @@ head(ZillowOwn, n=5)
 
 
 #DATA ANALYSIS
+
+#Summarize ZillowOwn and ZillowRent for mean values per year by city, for data vizualization
+
+
+
+
+
+#AMERICAN COMMUNITY SURVEY (CENSUS) DATA
+
+#DATA IMPORT AND CLEANING
+ACS2011<-read.csv(file="ACS_11_5YR_S1903.csv", header=TRUE,sep=",")
+ACS2012<-read.csv(file="ACS_12_5YR_S1903.csv", header=TRUE,sep=",")
+ACS2013<-read.csv(file="ACS_13_5YR_S1903.csv", header=TRUE,sep=",")
+ACS2014<-read.csv(file="ACS_14_5YR_S1903.csv", header=TRUE,sep=",")
+
+
+#Change Headers for all ACS .csv Files
+head(ACS2011,n=5)
+setnames(ACS2011, old=c("GEO.id", "GEO.id2","HC01_EST_VC02", "HC02_EST_VC02"),
+         new=c("Geoid1", "ZipCode","Total Est HH", "Med Income HH"))
+head(ACS2011,n=5)
+
+head(ACS2012,n=5)
+setnames(ACS2012, old=c("GEO.id", "GEO.id2","HC01_EST_VC02", "HC02_EST_VC02"),
+         new=c("Geoid1", "ZipCode","Total Est HH", "Med Income HH"))
+head(ACS2012,n=5)
+
+head(ACS2013,n=5)
+setnames(ACS2013, old=c("GEO.id", "GEO.id2","HC01_EST_VC02", "HC02_EST_VC02"),
+         new=c("Geoid1", "ZipCode","Total Est HH", "Med Income HH"))
+head(ACS2013,n=5)
+
+head(ACS2014,n=5)
+setnames(ACS2014, old=c("GEO.id", "GEO.id2","HC01_EST_VC02", "HC02_EST_VC02"),
+         new=c("Geoid1", "ZipCode","Total Est HH", "Med Income HH"))
+head(ACS2014,n=5)
+
+#DATA ANALYSIS
+
+#Summarize ACS Data using ggplot to view changes in data.
+#Merge Datasets into one
+
+#Graph data using ggplot
+
 
 
